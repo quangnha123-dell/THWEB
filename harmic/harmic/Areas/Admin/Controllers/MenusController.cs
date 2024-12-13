@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using harmic.Models;
-using Harmic.Utilities;
+using harmic.Utilities;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 
-namespace Harmic.Areas.Admin.Controllers
+namespace harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class MenusController : Controller
@@ -61,7 +61,7 @@ namespace Harmic.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                tbMenu.Alias = Harmic.Utilities.Function.TitleSlugGeneration(tbMenu.Title);
+                tbMenu.Alias = harmic.Utilities.Function.TitleSlugenerationAlias(tbMenu.Title);
                 _context.Add(tbMenu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

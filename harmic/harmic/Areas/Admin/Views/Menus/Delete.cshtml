@@ -1,4 +1,4 @@
-﻿@model Harmic.Models.TbMenu
+﻿@model harmic.Models.TbMenu
 
 @{
     ViewData["Title"] = "Delete";
@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Menu cha:</label>
-                                @Html.DisplayFor(model => model.ParentId)
+                                @Html.DisplayFor(model => model.Parent)
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Hiện</label>
@@ -82,8 +82,3 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
